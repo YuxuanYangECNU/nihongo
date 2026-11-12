@@ -40,7 +40,7 @@ function renderGrammar(id,params){
  <h2 class="section-label">在喜欢的歌里 <small>歌词短摘录 · 附语境</small></h2>${data.songs.filter(s=>s.grammar.includes(item.id)).map(songExample).join('')||'<p class="empty-note">目前还没有收录直接对应这个用法的合适歌词。先用上面的完整例句理解，不把相似表达硬套进来。</p>'}
  <h2>顺便认识几个词</h2><div class="article-links">${data.vocabulary.filter(w=>w.grammar===item.id).map(w=>`<a class="chip-link" lang="ja" href="#/vocabulary?word=${safeId(w.word)}">${w.word} ↗</a>`).join('')||'<a class="chip-link" href="#/vocabulary">打开词汇本 →</a>'}</div><p class="content-note">整理自学习笔记 · ${item.addedAt} 更新</p></article><div class="article-pager"><span>${previous?`<a href="#/grammar/${previous.id}">← ${previous.title}</a>`:'从这里开始'}</span><span>${next?`<a href="#/grammar/${next.id}">${next.title} →</a>`:'<a href="#/songs">到歌曲里看看 →</a>'}</span></div></div></div>`;
  attachReadControls();
- if(resume){restoring=true;requestAnimationFrame(()=>{window.scrollTo(0,(document.documentElement.scrollHeight-window.innerHeight)*(saved.ratio||0));setTimeout(()=>restoring=false,200);});}
+ if(resume){restoring=true;requestAnimationFrame(()=>{window.scrollTo({top:(document.documentElement.scrollHeight-window.innerHeight)*(saved.ratio||0),behavior:'instant'});setTimeout(()=>restoring=false,200);});}
 }
 function vocabExample(word){const song=data.songs.find(s=>s.id===word.songId);return song?`<p class="vocab-example" lang="ja">${highlight(song.excerpt,song.focus)}</p><p class="kana" lang="ja">${song.kana}</p><p class="meaning">${song.meaning}</p><p class="context-note">${song.context}</p><a class="source-link" href="#/songs/${song.id}">${song.artist} · ${song.title} ↗</a>`:`<p class="vocab-example" lang="ja">${highlight(word.example,word.word)}</p><p class="kana" lang="ja">${word.exampleKana}</p><p class="meaning">${word.exampleMeaning}</p><span class="source-tag">${word.source}</span>`;}
 function renderVocabulary(params){
@@ -91,6 +91,7 @@ function route(){
 }
 window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);if(currentGrammar&&!restoring)scrollTimer=setTimeout(savePosition,350);},{passive:true});
 window.addEventListener('pagehide',savePosition);
+document.addEventListener('click',event=>{const link=event.target.closest('a[href^="#/"]');if(link&&currentGrammar)savePosition();},{capture:true});
 function authPanel(){const s=status();const area=$('#auth-area');
  if(!configured){area.innerHTML='<div class="sync-info"><strong>当前保存到这台设备</strong>阅读位置和显示偏好会保留。跨设备同步尚未连接，连接后可在手机和电脑间接着读。</div>';return;}
  if(s.signedIn){area.innerHTML=`<div class="sync-info"><strong>已登录</strong>${esc(s.email)}</div><div class="hero-actions"><button id="sync-now">立即同步</button><button id="sign-out">退出登录</button></div>`;$('#sync-now').addEventListener('click',async()=>{await syncNow();});$('#sign-out').addEventListener('click',async()=>{await signOut();authPanel();});return;}
