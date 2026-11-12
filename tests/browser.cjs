@@ -30,7 +30,7 @@ fs.mkdirSync('test-results',{recursive:true});
  await page.locator('a[href="#/grammar/experience"]').click();await page.locator('.article-card h1').filter({hasText:'～ことがある：经历'}).waitFor();assert.equal(await page.locator('.article-card h1').innerText(),'～ことがある：经历');
  await page.evaluate(()=>window.scrollTo({top:600,behavior:'instant'}));await page.waitForTimeout(500);
  await page.locator('nav a[data-page=home]').click();assert.match(await page.locator('.hero .primary').getAttribute('href'),/experience\?resume=1/);
- await page.locator('.hero .primary').click();await page.waitForFunction(()=>scrollY>100);assert(await page.evaluate(()=>scrollY>100));
+ await page.locator('.hero .primary').click();await page.waitForTimeout(220);console.log('RESUME_DIAG',JSON.stringify(await page.evaluate(()=>({hash:location.hash,scrollY,documentHeight:document.documentElement.scrollHeight,innerHeight,reading:JSON.parse(localStorage.getItem('nihongo-atlas-v1-state-local')||'{}').reading}))));await page.waitForFunction(()=>scrollY>100);assert(await page.evaluate(()=>scrollY>100));
  await page.locator('#sync-open').click();assert.match(await page.locator('#auth-area').innerText(),/尚未连接/);await page.locator('.dialog-close').click();
  await page.locator('#theme-toggle').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');
  await page.goto('http://localhost:4173/#/grammar/na-adj');await page.locator('.song-example').first().waitFor();assert(await page.locator('#grammar-lyric-list .song-example').count()>=6);await page.locator('#grammar-artist').selectOption('YOASOBI');assert.equal(await page.locator('#grammar-lyric-list .song-example').count(),1);await page.screenshot({path:'test-results/grammar-dark.png',fullPage:true});
