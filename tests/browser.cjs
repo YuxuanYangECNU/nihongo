@@ -43,7 +43,7 @@ fs.mkdirSync('test-results',{recursive:true});
  await page.goto('http://localhost:4173/#/home');await page.screenshot({path:'test-results/home-mobile.png',fullPage:true});
  // Mock only the external service; the production auth/sync frontend runs unchanged.
  const sync=await browser.newPage();let calls=0;
- await sync.route('**/assets/config.js',route=>route.fulfill({contentType:'application/javascript',body:"window.NIHONGO_CONFIG={supabaseUrl:'https://test.supabase.co',supabasePublishableKey:'public-test'};"}));
+ await sync.route('**/assets/config.js*',route=>route.fulfill({contentType:'application/javascript',body:"window.NIHONGO_CONFIG={supabaseUrl:'https://test.supabase.co',supabasePublishableKey:'public-test'};"}));
  await sync.route('https://test.supabase.co/**',async route=>{
   const req=route.request();if(req.method()==='OPTIONS')return route.fulfill({status:200,headers:{'access-control-allow-origin':'*','access-control-allow-headers':'*'}});
   const common={contentType:'application/json',headers:{'access-control-allow-origin':'*'}};
