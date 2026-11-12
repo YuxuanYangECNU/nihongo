@@ -25,7 +25,7 @@ fs.mkdirSync('test-results',{recursive:true});
  await input.dispatchEvent('compositionend');await page.waitForTimeout(100);await input.press('Enter');assert.match(await page.locator('.practice-feedback').innerText(),/写对/);
  await page.locator('#reset-filters').click();await page.locator('#pos').selectOption('动词');await page.locator('#verb-class').selectOption('二类');assert.equal(await page.locator('.vocab-card').count(),3);
  await page.locator('#date-from').fill('2026-11-13');await page.locator('.empty-results').waitFor();await page.locator('#reset-filters').click();
- await page.locator('nav a[data-page=songs]').click();await page.locator('[data-artist=Vaundy]').click();assert.equal(await page.locator('.song-card').count(),2);
+ await page.locator('nav a[data-page=songs]').click();await page.locator('[data-artist=Vaundy]').click();assert.equal(await page.locator('.song-card').count(),5);
  await page.locator('a[href="#/songs/odoriko"]').first().click();assert.match(await page.locator('.context-note').innerText(),/只见过一次/);
  await page.locator('a[href="#/grammar/experience"]').click();await page.locator('.article-card h1').filter({hasText:'～ことがある：经历'}).waitFor();assert.equal(await page.locator('.article-card h1').innerText(),'～ことがある：经历');
  await page.evaluate(()=>window.scrollTo({top:600,behavior:'instant'}));await page.waitForTimeout(500);
@@ -33,7 +33,7 @@ fs.mkdirSync('test-results',{recursive:true});
  await page.locator('.hero .primary').click();await page.waitForFunction(()=>scrollY>100);assert(await page.evaluate(()=>scrollY>100));
  await page.locator('#sync-open').click();assert.match(await page.locator('#auth-area').innerText(),/尚未连接/);await page.locator('.dialog-close').click();
  await page.locator('#theme-toggle').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');
- await page.goto('http://localhost:4173/#/grammar/na-adj');await page.locator('.song-example').first().waitFor();await page.screenshot({path:'test-results/grammar-dark.png',fullPage:true});
+ await page.goto('http://localhost:4173/#/grammar/na-adj');await page.locator('.song-example').first().waitFor();assert(await page.locator('#grammar-lyric-list .song-example').count()>=6);await page.locator('#grammar-artist').selectOption('YOASOBI');assert.equal(await page.locator('#grammar-lyric-list .song-example').count(),1);await page.screenshot({path:'test-results/grammar-dark.png',fullPage:true});
  await page.locator('#theme-toggle').click();
  await page.setViewportSize({width:390,height:844});
  for(const route of ['home','grammar/na-adj','vocabulary','songs','songs/odoriko']){
