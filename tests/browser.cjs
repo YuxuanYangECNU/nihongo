@@ -27,7 +27,7 @@ fs.mkdirSync('test-results',{recursive:true});
  await page.locator('#date-from').fill('2026-11-13');await page.locator('.empty-results').waitFor();await page.locator('#reset-filters').click();
  await page.locator('nav a[data-page=songs]').click();await page.locator('[data-artist=Vaundy]').click();assert.equal(await page.locator('.song-card').count(),2);
  await page.locator('a[href="#/songs/odoriko"]').first().click();assert.match(await page.locator('.context-note').innerText(),/只见过一次/);
- await page.locator('a[href="#/grammar/experience"]').click();assert.equal(await page.locator('.article-card h1').innerText(),'～ことがある：经历');
+ await page.locator('a[href="#/grammar/experience"]').click();await page.locator('.article-card h1').filter({hasText:'～ことがある：经历'}).waitFor();assert.equal(await page.locator('.article-card h1').innerText(),'～ことがある：经历');
  await page.evaluate(()=>window.scrollTo(0,600));await page.waitForTimeout(500);
  await page.locator('nav a[data-page=home]').click();assert.match(await page.locator('.hero .primary').getAttribute('href'),/experience\?resume=1/);
  await page.locator('.hero .primary').click();await page.waitForTimeout(350);assert(await page.evaluate(()=>scrollY>100));
