@@ -5,9 +5,9 @@ A personal Japanese notebook, organized by grammar and connected to J-POP.
 ## Pages
 
 - **Home:** recent additions and resume reading.
-- **Grammar:** 12 topics from the initial learning notes; polite/plain form comparisons, kana, explanations, and sourced short lyric excerpts.
+- **Grammar:** 12 topics in the initial note order; eight polite/plain forms, complete original practice sentences, kana and multiple sourced short lyric excerpts per grammar. Filter by artist inside each grammar topic.
 - **Vocabulary:** 24 starter entries, search and combined filters (part of speech, verb class, artist, date); optional Chinese → Japanese and Japanese → kana typing.
-- **Songs:** 8 verified songs from YOASOBI, あいみょん, Vaundy and ヨルシカ, linked to grammar and vocabulary.
+- **Songs:** 23 verified songs from YOASOBI, あいみょん, Vaundy and ヨルシカ, linked to grammar and vocabulary.
 
 No quizzes, scores, mastery tracking, wrong-answer collection, or review scheduling. Typing feedback is ephemeral.
 
@@ -28,7 +28,7 @@ Open http://localhost:4173. Serve over HTTP; ES modules and content loading do n
 `.github/workflows/pages.yml` validates the data and publishes only `index.html`, `assets/`, and `data/`.
 Enable **Settings → Pages → Build and deployment → GitHub Actions** once. Then pushes to `main` publish automatically.
 
-The interface follows the existing IELTS Atlas design (light gray background, white cards, blue accents, dark mode). Japanese reading uses Noto Sans JP and Noto Serif JP, with system fallbacks. The frontend is a dependency-free static application rather than MkDocs: this keeps the search, filtering and typing modules together and avoids an unnecessary content-generation dependency. All learning content is in `data/content.json`.
+The interface follows the existing IELTS Atlas design (light gray background, white cards, blue accents, dark mode). Japanese reading uses Noto Sans JP and Noto Serif JP, with system fallbacks. The frontend is a dependency-free static application rather than MkDocs: this keeps the search, filtering and typing modules together and avoids an unnecessary content-generation dependency. All learning content is in `data/content.json`. Each song can provide several verified short excerpts through optional `extraExcerpts[]`.
 
 ## Sync status
 
