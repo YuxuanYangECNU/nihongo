@@ -28,6 +28,20 @@
           "meaning": "我以前不是学生。",
           "focus": "ではありませんでした",
           "source": "笔记例句"
+        },
+        {
+          "text": "ここは図書館ではない。",
+          "kana": "ここはとしょかんではない。",
+          "meaning": "这里不是图书馆。",
+          "focus": "ではない",
+          "source": "原创拓展"
+        },
+        {
+          "text": "昨日は休みだった。",
+          "kana": "きのうはやすみだった。",
+          "meaning": "昨天是休息日。",
+          "focus": "だった",
+          "source": "原创拓展"
         }
       ],
       "forms": [
@@ -93,6 +107,20 @@
           "meaning": "昨天不冷。",
           "focus": "寒くなかった",
           "source": "笔记例句"
+        },
+        {
+          "text": "今日は楽しくないです。",
+          "kana": "きょうはたのしくないです。",
+          "meaning": "今天不开心。",
+          "focus": "楽しくない",
+          "source": "原创拓展"
+        },
+        {
+          "text": "あのライブは楽しかった。",
+          "kana": "あのらいぶはたのしかった。",
+          "meaning": "那场演唱会很开心。",
+          "focus": "楽しかった",
+          "source": "原创拓展"
         }
       ],
       "forms": [
@@ -158,6 +186,20 @@
           "meaning": "这里以前不安静。",
           "focus": "ではなかった",
           "source": "笔记例句"
+        },
+        {
+          "text": "この町はにぎやかではありません。",
+          "kana": "このまちはにぎやかではありません。",
+          "meaning": "这个城镇并不热闹。",
+          "focus": "ではありません",
+          "source": "原创拓展"
+        },
+        {
+          "text": "あの道は静かだった。",
+          "kana": "あのみちはしずかだった。",
+          "meaning": "那条路曾经很安静。",
+          "focus": "だった",
+          "source": "原创拓展"
         }
       ],
       "forms": [
@@ -223,6 +265,20 @@
           "meaning": "我没有吃饭。",
           "focus": "食べなかった",
           "source": "笔记例句"
+        },
+        {
+          "text": "昨日、音楽を聴きました。",
+          "kana": "きのう、おんがくをききました。",
+          "meaning": "昨天听了音乐。",
+          "focus": "聴きました",
+          "source": "原创拓展"
+        },
+        {
+          "text": "今日は歌いません。",
+          "kana": "きょうはうたいません。",
+          "meaning": "今天不唱歌。",
+          "focus": "歌いません",
+          "source": "原创拓展"
         }
       ],
       "forms": [
@@ -537,7 +593,33 @@
       "color": "violet",
       "verifiedAt": "2026-11-12",
       "source": "歌ネット",
-      "type": "歌词短摘录"
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "怖くないよ",
+          "kana": "こわくないよ",
+          "focus": "くない",
+          "meaning": "不害怕。",
+          "context": "安慰对方，劝其消除恐惧。",
+          "analysis": "怖い→怖くない；句末よ表示告知与安慰。",
+          "grammar": [
+            "i-adj"
+          ],
+          "form": "い形容词·非过去否定"
+        },
+        {
+          "excerpt": "落ちてゆく前に",
+          "kana": "おちてゆくまえに",
+          "focus": "前に",
+          "meaning": "在坠落之前。",
+          "context": "催促对方在夜色中坠落之前抓住伸出的手。",
+          "analysis": "前に接辞书形。ゆく与行く相关，其细微语感以后学习。",
+          "grammar": [
+            "before"
+          ],
+          "form": "辞书形＋前に"
+        }
+      ]
     },
     {
       "id": "marigold",
@@ -556,7 +638,21 @@
       "color": "amber",
       "verifiedAt": "2026-11-12",
       "source": "歌ネット",
-      "type": "歌词短摘录"
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "幸せだ",
+          "kana": "しあわせだ",
+          "focus": "だ",
+          "meaning": "很幸福。",
+          "context": "看着喜欢的人时感受到幸福。",
+          "analysis": "幸せ是な形容词，だ是简体非过去肯定。",
+          "grammar": [
+            "na-adj"
+          ],
+          "form": "な形容词·非过去肯定"
+        }
+      ]
     },
     {
       "id": "kaiju",
@@ -634,7 +730,34 @@
       "color": "sand",
       "verifiedAt": "2026-11-12",
       "source": "歌ネット",
-      "type": "歌词短摘录"
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "人です",
+          "kana": "ひとです",
+          "focus": "です",
+          "meaning": "是这样的人。",
+          "context": "前面的定语用于描述说话者属于哪种人。",
+          "analysis": "人是名词，です是敬体非过去肯定。",
+          "grammar": [
+            "noun"
+          ],
+          "form": "名词句·敬体非过去肯定"
+        },
+        {
+          "excerpt": "成長しましたね",
+          "kana": "せいちょうしましたね",
+          "focus": "しました",
+          "meaning": "成长了呢。",
+          "context": "用采访式口吻谈到成长。",
+          "analysis": "成長する为三类动词，成長しました是敬体过去肯定。",
+          "grammar": [
+            "verb",
+            "classes"
+          ],
+          "form": "动词·敬体过去肯定"
+        }
+      ]
     },
     {
       "id": "odoriko",
@@ -653,7 +776,21 @@
       "color": "violet",
       "verifiedAt": "2026-11-12",
       "source": "歌ネット",
-      "type": "歌词短摘录"
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "忘れてしまう前に",
+          "kana": "わすれてしまうまえに",
+          "focus": "前に",
+          "meaning": "在彻底忘记之前。",
+          "context": "希望在遗忘之前拾起重要的事情。",
+          "analysis": "前に前接辞书形；「てしまう」以后再详细学。",
+          "grammar": [
+            "before"
+          ],
+          "form": "辞书形＋前に（延伸）"
+        }
+      ]
     },
     {
       "id": "kaze",
@@ -670,6 +807,381 @@
         "ability"
       ],
       "color": "teal",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "tada",
+      "title": "ただ君に晴れ",
+      "artist": "ヨルシカ",
+      "url": "https://www.uta-net.com/song/248496/",
+      "excerpt": "写真なんて紙切れだ",
+      "kana": "しゃしんなんてかみきれだ",
+      "focus": "紙切れだ",
+      "meaning": "照片不过是一张纸。",
+      "context": "将照片与记忆对照，感叹照片终究只是纸。",
+      "analysis": "紙切れ是名词，＋だ表示简体非过去肯定。",
+      "grammar": [
+        "noun"
+      ],
+      "form": "名词句·简体非过去肯定",
+      "color": "blue",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "僕は一人だ",
+          "kana": "ぼくはひとりだ",
+          "focus": "一人だ",
+          "meaning": "我独自一人。",
+          "context": "沉浸在回忆中的孤独感。",
+          "analysis": "一人是名词，だ是简体非过去肯定。",
+          "grammar": [
+            "noun"
+          ],
+          "form": "名词句·非过去肯定"
+        }
+      ]
+    },
+    {
+      "id": "tokyo",
+      "title": "東京フラッシュ",
+      "artist": "Vaundy",
+      "url": "https://www.uta-net.com/song/280076/",
+      "excerpt": "わるくない",
+      "kana": "わるくない",
+      "focus": "くない",
+      "meaning": "不坏；还不错。",
+      "context": "对眼前的互动表达复杂的肯定。",
+      "analysis": "わるい→わるくない；い形容词简体非过去否定。",
+      "grammar": [
+        "i-adj"
+      ],
+      "form": "い形容词·非过去否定",
+      "color": "violet",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "sketch",
+      "title": "スケッチ",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/368412/",
+      "excerpt": "楽しかったね",
+      "kana": "たのしかったね",
+      "focus": "かった",
+      "meaning": "那时很开心呢。",
+      "context": "回顾过去相处的温柔时光。",
+      "analysis": "楽しい→楽しかった，い形容词简体过去肯定；ね表示共鸣。",
+      "grammar": [
+        "i-adj"
+      ],
+      "form": "い形容词·过去肯定",
+      "color": "amber",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "僕は眠る",
+          "kana": "ぼくはねむる",
+          "focus": "眠る",
+          "meaning": "我入睡。",
+          "context": "回忆温柔的往事，平静地入睡。",
+          "analysis": "眠る是一类动词，这里是简体非过去肯定。",
+          "grammar": [
+            "verb",
+            "dictionary"
+          ],
+          "form": "动词·非过去肯定"
+        }
+      ]
+    },
+    {
+      "id": "tsuyogari",
+      "title": "強がりました",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/180920/",
+      "excerpt": "悪くなかった",
+      "kana": "わるくなかった",
+      "focus": "くなかった",
+      "meaning": "并不坏。",
+      "context": "猜想如果选择另一条路，命运会不会也不错。",
+      "analysis": "悪い→悪くなかった，い形容词简体过去否定。",
+      "grammar": [
+        "i-adj"
+      ],
+      "form": "い形容词·过去否定",
+      "color": "rose",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "wakattenai",
+      "title": "わかってない",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/247618/",
+      "excerpt": "不安じゃない",
+      "kana": "ふあんじゃない",
+      "focus": "じゃない",
+      "meaning": "并不担忧。",
+      "context": "后文否定了这种表面的坚强，要结合上下文阅读。",
+      "analysis": "不安是な形容词，じゃない＝ではない的口语形式。",
+      "grammar": [
+        "na-adj"
+      ],
+      "form": "な形容词·非过去否定",
+      "color": "sand",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "shura",
+      "title": "修羅",
+      "artist": "ヨルシカ",
+      "url": "https://www.uta-net.com/song/377938/",
+      "excerpt": "知らなかった",
+      "kana": "しらなかった",
+      "focus": "なかった",
+      "meaning": "此前不知道。",
+      "context": "重复感叹自己不了解对方。",
+      "analysis": "知る是特殊一类动词：知る→知らない→知らなかった。",
+      "grammar": [
+        "verb",
+        "classes"
+      ],
+      "form": "动词·过去否定",
+      "color": "teal",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "hanani",
+      "title": "花に亡霊",
+      "artist": "ヨルシカ",
+      "url": "https://www.uta-net.com/song/284491/",
+      "excerpt": "夏が来る",
+      "kana": "なつがくる",
+      "focus": "来る",
+      "meaning": "夏天到来。",
+      "context": "以夏天来临唤起过去的回忆。",
+      "analysis": "来る（くる）是三类不规则动词，使用辞书形。",
+      "grammar": [
+        "classes",
+        "dictionary"
+      ],
+      "form": "三类动词·辞书形",
+      "color": "blue",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "dakara",
+      "title": "だから僕は音楽を辞めた",
+      "artist": "ヨルシカ",
+      "url": "https://www.uta-net.com/song/265895/",
+      "excerpt": "音楽を辞めた",
+      "kana": "おんがくをやめた",
+      "focus": "辞めた",
+      "meaning": "放弃了音乐。",
+      "context": "解释为何最终放弃音乐。",
+      "analysis": "辞める是二类动词，辞书形辞める→た形辞めた。",
+      "grammar": [
+        "verb",
+        "classes"
+      ],
+      "form": "动词·过去肯定",
+      "color": "sand",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "futari",
+      "title": "二人話",
+      "artist": "Vaundy",
+      "url": "https://www.uta-net.com/song/314605/",
+      "excerpt": "変わらなかった",
+      "kana": "かわらなかった",
+      "focus": "なかった",
+      "meaning": "没有改变。",
+      "context": "设想如果当初做了不同选择，关系或许仍然不变。",
+      "analysis": "変わる→変わらない→変わらなかった，动词过去否定。",
+      "grammar": [
+        "verb"
+      ],
+      "form": "动词·过去否定",
+      "color": "violet",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "hyohaku",
+      "title": "漂白",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/235593/",
+      "excerpt": "好きでした",
+      "kana": "すきでした",
+      "focus": "でした",
+      "meaning": "曾经喜欢。",
+      "context": "想起自己曾喜欢的笑容。",
+      "analysis": "好き是な形容词，＋でした表示敬体过去肯定。",
+      "grammar": [
+        "na-adj"
+      ],
+      "form": "な形容词·敬体过去肯定",
+      "color": "rose",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "愛すること",
+          "kana": "あいすること",
+          "focus": "こと",
+          "meaning": "爱这件事。",
+          "context": "回顾自己渐渐懂得去爱。",
+          "analysis": "辞书形＋こと可把动作名词化；原词没有「ことです」，这是相关基础。",
+          "grammar": [
+            "nominal"
+          ],
+          "form": "相关基础·动词名词化"
+        }
+      ]
+    },
+    {
+      "id": "hadaka",
+      "title": "裸の心",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/285059/",
+      "excerpt": "分からない",
+      "kana": "わからない",
+      "focus": "らない",
+      "meaning": "不知道。",
+      "context": "对恋爱未来的不确定感。",
+      "analysis": "分かる是一类动词，否定是分からない。",
+      "grammar": [
+        "verb"
+      ],
+      "form": "动词·非过去否定",
+      "color": "rose",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "gunjo",
+      "title": "群青",
+      "artist": "YOASOBI",
+      "url": "https://www.uta-net.com/song/290004/",
+      "excerpt": "好きだ",
+      "kana": "すきだ",
+      "focus": "だ",
+      "meaning": "喜欢。",
+      "context": "说出自己所喜欢的东西，鼓起勇气面对内心。",
+      "analysis": "好き是な形容词，作谓语时使用好きだ。",
+      "grammar": [
+        "na-adj"
+      ],
+      "form": "な形容词·非过去肯定",
+      "color": "blue",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "つまらないな",
+          "kana": "つまらないな",
+          "focus": "つまらない",
+          "meaning": "真无聊啊。",
+          "context": "对一成不变的日常感到厌倦。",
+          "analysis": "つまらない本身是い形容词，不是普通动词的ない形。",
+          "grammar": [
+            "i-adj"
+          ],
+          "form": "い形容词·原形"
+        }
+      ]
+    },
+    {
+      "id": "popuri",
+      "title": "ポプリの葉",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/290619/",
+      "excerpt": "女です",
+      "kana": "おんなです",
+      "focus": "です",
+      "meaning": "是个女人。",
+      "context": "气味唤起旧日感情，叙述者描述自己。",
+      "analysis": "女是名词，です是敬体非过去肯定。",
+      "grammar": [
+        "noun"
+      ],
+      "form": "名词句·敬体非过去肯定",
+      "color": "amber",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录",
+      "extraExcerpts": [
+        {
+          "excerpt": "好きだったなぁ",
+          "kana": "すきだったなぁ",
+          "focus": "だった",
+          "meaning": "以前很喜欢啊。",
+          "context": "熟悉的气味勾起旧日感情。",
+          "analysis": "好き是な形容词：好きだ→好きだった。",
+          "grammar": [
+            "na-adj"
+          ],
+          "form": "な形容词·过去肯定"
+        }
+      ]
+    },
+    {
+      "id": "harujion",
+      "title": "ハルジオン",
+      "artist": "YOASOBI",
+      "url": "https://www.uta-net.com/song/285262/",
+      "excerpt": "信じた",
+      "kana": "しんじた",
+      "focus": "じた",
+      "meaning": "相信了。",
+      "context": "回想曾经相信对方言语的自己。",
+      "analysis": "信じる是二类动词，信じる→信じた。",
+      "grammar": [
+        "verb",
+        "classes"
+      ],
+      "form": "动词·过去肯定",
+      "color": "teal",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "koikaze",
+      "title": "恋風邪にのせて",
+      "artist": "Vaundy",
+      "url": "https://www.uta-net.com/song/315960/",
+      "excerpt": "笑っていた",
+      "kana": "わらっていた",
+      "focus": "ていた",
+      "meaning": "当时总是笑着。",
+      "context": "把现在和过去的相处场景并置。",
+      "analysis": "笑う→笑っている→笑っていた，含尚未学到的「ている」延伸语法。",
+      "grammar": [
+        "verb"
+      ],
+      "form": "延伸·ている的过去形式",
+      "color": "sand",
       "verifiedAt": "2026-11-12",
       "source": "歌ネット",
       "type": "歌词短摘录"
