@@ -1,0 +1,1184 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-12",
+  "grammar": [
+    {
+      "id": "noun",
+      "group": "四大基本句型",
+      "title": "名词句",
+      "subtitle": "用「です／だ」说明是什么",
+      "formula": "名词 ＋ です／だ",
+      "description": "名词作谓语时，用です或だ表达身份、性质等。先把礼貌程度与时间分开理解。",
+      "points": [
+        "敬体与简体主要区别在表达方式，不是两个不同意思。",
+        "日语的“现在形”也可表示未来，因此这里统一标为“非过去”。",
+        "じゃない＝ではない的口语形式。"
+      ],
+      "examples": [
+        {
+          "text": "私は学生です。",
+          "kana": "わたしはがくせいです。",
+          "meaning": "我是学生。",
+          "focus": "です",
+          "source": "笔记例句"
+        },
+        {
+          "text": "私は学生ではありませんでした。",
+          "kana": "わたしはがくせいではありませんでした。",
+          "meaning": "我以前不是学生。",
+          "focus": "ではありませんでした",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [
+        {
+          "label": "敬体 · 非过去肯定",
+          "text": "学生です"
+        },
+        {
+          "label": "敬体 · 非过去否定",
+          "text": "学生ではありません"
+        },
+        {
+          "label": "敬体 · 过去肯定",
+          "text": "学生でした"
+        },
+        {
+          "label": "敬体 · 过去否定",
+          "text": "学生ではありませんでした"
+        },
+        {
+          "label": "简体 · 非过去肯定",
+          "text": "学生だ"
+        },
+        {
+          "label": "简体 · 非过去否定",
+          "text": "学生ではない"
+        },
+        {
+          "label": "简体 · 过去肯定",
+          "text": "学生だった"
+        },
+        {
+          "label": "简体 · 过去否定",
+          "text": "学生ではなかった"
+        }
+      ],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "i-adj",
+      "group": "四大基本句型",
+      "title": "い形容词句",
+      "subtitle": "寒い → 寒くない → 寒かった",
+      "formula": "い → くない／かった／くなかった",
+      "description": "い形容词本身可以变化。简体肯定直接使用词尾い，不加だ。",
+      "points": [
+        "寒いです是敬体，寒い是简体；不能说寒いだ。",
+        "否定：去い＋くない；过去：去い＋かった。",
+        "いい是常见例外：よくない、よかった、よくなかった。"
+      ],
+      "examples": [
+        {
+          "text": "今日は寒いです。",
+          "kana": "きょうはさむいです。",
+          "meaning": "今天很冷。",
+          "focus": "寒い",
+          "source": "笔记例句"
+        },
+        {
+          "text": "昨日は寒くなかったです。",
+          "kana": "きのうはさむくなかったです。",
+          "meaning": "昨天不冷。",
+          "focus": "寒くなかった",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [
+        {
+          "label": "敬体 · 非过去肯定",
+          "text": "寒いです"
+        },
+        {
+          "label": "敬体 · 非过去否定",
+          "text": "寒くないです"
+        },
+        {
+          "label": "敬体 · 过去肯定",
+          "text": "寒かったです"
+        },
+        {
+          "label": "敬体 · 过去否定",
+          "text": "寒くなかったです"
+        },
+        {
+          "label": "简体 · 非过去肯定",
+          "text": "寒い"
+        },
+        {
+          "label": "简体 · 非过去否定",
+          "text": "寒くない"
+        },
+        {
+          "label": "简体 · 过去肯定",
+          "text": "寒かった"
+        },
+        {
+          "label": "简体 · 过去否定",
+          "text": "寒くなかった"
+        }
+      ],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "na-adj",
+      "group": "四大基本句型",
+      "title": "な形容词句",
+      "subtitle": "也就是笔记里的「形容动词」",
+      "formula": "词干 ＋ です／だ；修饰名词时 ＋ な",
+      "description": "な形容词作谓语时，与名词句使用相似的结尾；な主要出现在修饰名词时。",
+      "points": [
+        "静かだ／静かです：这里很安静；静かな場所：安静的地方。",
+        "好き、幸せ、鮮明都是な形容词。",
+        "きれい虽然以い结尾，仍然是な形容词。"
+      ],
+      "examples": [
+        {
+          "text": "ここは静かです。",
+          "kana": "ここはしずかです。",
+          "meaning": "这里很安静。",
+          "focus": "静かです",
+          "source": "笔记例句"
+        },
+        {
+          "text": "ここは静かではなかった。",
+          "kana": "ここはしずかではなかった。",
+          "meaning": "这里以前不安静。",
+          "focus": "ではなかった",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [
+        {
+          "label": "敬体 · 非过去肯定",
+          "text": "静かです"
+        },
+        {
+          "label": "敬体 · 非过去否定",
+          "text": "静かではありません"
+        },
+        {
+          "label": "敬体 · 过去肯定",
+          "text": "静かでした"
+        },
+        {
+          "label": "敬体 · 过去否定",
+          "text": "静かではありませんでした"
+        },
+        {
+          "label": "简体 · 非过去肯定",
+          "text": "静かだ"
+        },
+        {
+          "label": "简体 · 非过去否定",
+          "text": "静かではない"
+        },
+        {
+          "label": "简体 · 过去肯定",
+          "text": "静かだった"
+        },
+        {
+          "label": "简体 · 过去否定",
+          "text": "静かではなかった"
+        }
+      ],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "verb",
+      "group": "四大基本句型",
+      "title": "动词句",
+      "subtitle": "食べます与食べる，表达方式的切换",
+      "formula": "ます／ません／ました／ませんでした",
+      "description": "动词自己承担句尾变化。先认识四种敬体和四种简体，再学习各类动词怎样变形。",
+      "points": [
+        "食べる可以表示习惯或将来要吃，不等于“正在吃”。",
+        "不同类别的动词，ない形、た形的变法不同。",
+        "正在做某事通常涉及ている，后续再展开。"
+      ],
+      "examples": [
+        {
+          "text": "私はご飯を食べます。",
+          "kana": "わたしはごはんをたべます。",
+          "meaning": "我吃饭。",
+          "focus": "食べます",
+          "source": "笔记例句"
+        },
+        {
+          "text": "私はご飯を食べなかった。",
+          "kana": "わたしはごはんをたべなかった。",
+          "meaning": "我没有吃饭。",
+          "focus": "食べなかった",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [
+        {
+          "label": "敬体 · 非过去肯定",
+          "text": "食べます"
+        },
+        {
+          "label": "敬体 · 非过去否定",
+          "text": "食べません"
+        },
+        {
+          "label": "敬体 · 过去肯定",
+          "text": "食べました"
+        },
+        {
+          "label": "敬体 · 过去否定",
+          "text": "食べませんでした"
+        },
+        {
+          "label": "简体 · 非过去肯定",
+          "text": "食べる"
+        },
+        {
+          "label": "简体 · 非过去否定",
+          "text": "食べない"
+        },
+        {
+          "label": "简体 · 过去肯定",
+          "text": "食べた"
+        },
+        {
+          "label": "简体 · 过去否定",
+          "text": "食べなかった"
+        }
+      ],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "classes",
+      "group": "动词与变形",
+      "title": "动词分类",
+      "subtitle": "一类・二类・三类",
+      "formula": "五段／一段／不规则动词",
+      "description": "先排除する、来る；其余动词再根据词尾初步判断。い／え段＋る只是二类的候选条件。",
+      "points": [
+        "一类：書く、歌う、読む，以及る前为あ／う／お段的动词。",
+        "二类：食べる、見る等。る前是い／え段，但有例外，不能一概判断。",
+        "三类：する、来る（くる），以及勉強する等复合形式。",
+        "特殊一类：帰る、走る、滑る、入る（はいる）、減る、知る、要る、散る。",
+        "原笔记的入る（いる）：若意思是“需要”，应写要る。居る（いる，“在”）则是二类。"
+      ],
+      "examples": [
+        {
+          "text": "毎日、学校へ行きます。",
+          "kana": "まいにち、がっこうへいきます。",
+          "meaning": "每天去学校。",
+          "focus": "行きます",
+          "source": "原创拓展"
+        },
+        {
+          "text": "家で音楽を聴きます。",
+          "kana": "いえでおんがくをききます。",
+          "meaning": "在家听音乐。",
+          "focus": "聴きます",
+          "source": "原创拓展"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "dictionary",
+      "group": "动词与变形",
+      "title": "动词原形／辞书形",
+      "subtitle": "词典里的基本形式",
+      "formula": "食べる・聴く・する・来る",
+      "description": "辞书形可以作简体非过去肯定，也可以接后续语法。它不是敬体ます形。",
+      "points": [
+        "查词时通常使用辞书形：食べます→食べる。",
+        "辞书形＋前に、こと等，可以组成你已经学过的句型。",
+        "不要只凭ます形判断动词类别，先查到辞书形。"
+      ],
+      "examples": [
+        {
+          "text": "私はご飯を食べる。",
+          "kana": "わたしはごはんをたべる。",
+          "meaning": "我吃饭。",
+          "focus": "食べる",
+          "source": "笔记例句"
+        },
+        {
+          "text": "寝る前に、音楽を聴きます。",
+          "kana": "ねるまえに、おんがくをききます。",
+          "meaning": "睡觉前听音乐。",
+          "focus": "寝る",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "before",
+      "group": "动词原形相关句型",
+      "title": "～前に",
+      "subtitle": "在……之前",
+      "formula": "动词辞书形 ＋ 前に",
+      "description": "先做后半句的动作，再做前に前面的动作。",
+      "points": [
+        "食べる前に手を洗う：先洗手，再吃饭。",
+        "即使主句是过去时，前に前仍然用辞书形。",
+        "名词也可接の前に，但本条先掌握动词接续。"
+      ],
+      "examples": [
+        {
+          "text": "ご飯を食べる前に、手を洗ってください。",
+          "kana": "ごはんをたべるまえに、てをあらってください。",
+          "meaning": "吃饭前，请洗手。",
+          "focus": "食べる前に",
+          "source": "笔记例句"
+        },
+        {
+          "text": "寝る前に、音楽を聴きます。",
+          "kana": "ねるまえに、おんがくをききます。",
+          "meaning": "睡觉前听音乐。",
+          "focus": "寝る前に",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "after",
+      "group": "动词原形相关句型",
+      "title": "～後で",
+      "subtitle": "在……之后",
+      "formula": "动词た形 ＋ 後で",
+      "description": "先完成た形表示的动作，再做后半句的动作。",
+      "points": [
+        "食べた後で：吃完以后。前に接辞书形，後で接た形。",
+        "这里的た形表达先完成的动作；整句话也可以描述未来安排。"
+      ],
+      "examples": [
+        {
+          "text": "ご飯を食べた後で、音楽を聴きます。",
+          "kana": "ごはんをたべたあとで、おんがくをききます。",
+          "meaning": "吃完饭以后听音乐。",
+          "focus": "食べた後で",
+          "source": "原创拓展"
+        },
+        {
+          "text": "歌詞を読んだ後で、歌を聴きました。",
+          "kana": "かしをよんだあとで、うたをききました。",
+          "meaning": "读完歌词后听了歌。",
+          "focus": "読んだ後で",
+          "source": "原创拓展"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "nominal",
+      "group": "动词原形相关句型",
+      "title": "～ことです",
+      "subtitle": "把动作变成一件事情",
+      "formula": "动词辞书形 ＋ こと",
+      "description": "こと让动作名词化。常见句型是“私の趣味は～ことです”。",
+      "points": [
+        "聴く是“听”；聴くこと是“听这件事”。",
+        "ことです中的です用于结束名词谓语句，不属于动词变形。"
+      ],
+      "examples": [
+        {
+          "text": "私の趣味は音楽を聴くことです。",
+          "kana": "わたしのしゅみはおんがくをきくことです。",
+          "meaning": "我的爱好是听音乐。",
+          "focus": "聴くことです",
+          "source": "笔记例句"
+        },
+        {
+          "text": "私の楽しみは、新しい歌を見つけることです。",
+          "kana": "わたしのたのしみは、あたらしいうたをみつけることです。",
+          "meaning": "我的乐趣是发现新的歌曲。",
+          "focus": "見つけることです",
+          "source": "原创拓展"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "occasional",
+      "group": "动词原形相关句型",
+      "title": "～ことがある：有时",
+      "subtitle": "说的是偶尔发生，不是经历",
+      "formula": "动词辞书形 ＋ ことがある",
+      "description": "表示某件事有时会发生。常和時々、たまに搭配。",
+      "points": [
+        "日本へ行くことがある：有时去日本。",
+        "不要与行ったことがある（去过）混淆。",
+        "修饰こと的结构不同，有时也可表示“有某件事”，要结合语境判断。"
+      ],
+      "examples": [
+        {
+          "text": "日本へ行くことがある。",
+          "kana": "にほんへいくことがある。",
+          "meaning": "有时去日本。",
+          "focus": "行くことがある",
+          "source": "笔记例句"
+        },
+        {
+          "text": "夜に音楽を聴くことがあります。",
+          "kana": "よるにおんがくをきくことがあります。",
+          "meaning": "有时晚上听音乐。",
+          "focus": "聴くことがあります",
+          "source": "原创拓展"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "experience",
+      "group": "动词原形相关句型",
+      "title": "～ことがある：经历",
+      "subtitle": "做过／没有做过",
+      "formula": "动词た形 ＋ ことがある／ない",
+      "description": "表示过去是否有过某种经历，通常不强调哪一次具体发生的事情。",
+      "points": [
+        "行ったことがある：去过；行ったことがない：没去过。",
+        "行った是“去了”，行ったことがある是“有去过的经历”。",
+        "否定如果与“只有某次数”的限定搭配，整体意思会改变，歌曲例子要看上下文。"
+      ],
+      "examples": [
+        {
+          "text": "日本へ行ったことがある。",
+          "kana": "にほんへいったことがある。",
+          "meaning": "去过日本。",
+          "focus": "行ったことがある",
+          "source": "笔记例句"
+        },
+        {
+          "text": "この歌を聴いたことがあります。",
+          "kana": "このうたをきいたことがあります。",
+          "meaning": "听过这首歌。",
+          "focus": "聴いたことがあります",
+          "source": "原创拓展"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    },
+    {
+      "id": "ability",
+      "group": "动词原形相关句型",
+      "title": "～ことができる",
+      "subtitle": "能力或条件允许",
+      "formula": "动词辞书形 ＋ ことができる",
+      "description": "可以表示个人有能力做某事，也可以表示条件允许。否定是ことができない。",
+      "points": [
+        "話すことができる：会说。",
+        "カードで払うことができる：条件允许，可以刷卡。",
+        "礼貌形式：ことができます／ことができません。"
+      ],
+      "examples": [
+        {
+          "text": "李さんは日本語を話すことができる。",
+          "kana": "りさんはにほんごをはなすことができる。",
+          "meaning": "小李会说日语。",
+          "focus": "話すことができる",
+          "source": "笔记例句"
+        },
+        {
+          "text": "この店は、カードで払うことができる。",
+          "kana": "このみせは、かーどではらうことができる。",
+          "meaning": "这家店可以刷卡。",
+          "focus": "払うことができる",
+          "source": "笔记例句"
+        }
+      ],
+      "forms": [],
+      "addedAt": "2026-11-12",
+      "level": "基础"
+    }
+  ],
+  "songs": [
+    {
+      "id": "yoru",
+      "title": "夜に駆ける",
+      "artist": "YOASOBI",
+      "url": "https://www.uta-net.com/song/284748/",
+      "excerpt": "「さよなら」だけだった",
+      "kana": "「さよなら」だけだった",
+      "focus": "だった",
+      "meaning": "只有一句“再见”。",
+      "context": "叙述从告别的话语展开。这是对当时情形的回顾。",
+      "analysis": "だった是だ的过去式。这里是名词性表达＋だけ＋だった；不是动词的た形。",
+      "grammar": [
+        "noun"
+      ],
+      "color": "violet",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "marigold",
+      "title": "マリーゴールド",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/251631/",
+      "excerpt": "君が恋しい",
+      "kana": "きみがこいしい",
+      "focus": "恋しい",
+      "meaning": "很想念你。",
+      "context": "叙述者回想对方的样子，流露思念。",
+      "analysis": "恋しい是い形容词。不是恋する的变形；恋しい→恋しくない→恋しかった。",
+      "grammar": [
+        "i-adj"
+      ],
+      "color": "amber",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "kaiju",
+      "title": "怪獣の花唄",
+      "artist": "Vaundy",
+      "url": "https://www.uta-net.com/song/285326/",
+      "excerpt": "鮮明だ",
+      "kana": "せんめいだ",
+      "focus": "だ",
+      "meaning": "很鲜明／清晰。",
+      "context": "记忆中对方唱歌欢笑的面容仍然清楚。",
+      "analysis": "鮮明是な形容词。作谓语时用鮮明だ；修饰名词时用鮮明な記憶。",
+      "grammar": [
+        "na-adj"
+      ],
+      "color": "teal",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "itte",
+      "title": "言って。",
+      "artist": "ヨルシカ",
+      "url": "https://www.uta-net.com/song/232389/",
+      "excerpt": "無駄じゃなかった",
+      "kana": "むだじゃなかった",
+      "focus": "じゃなかった",
+      "meaning": "并没有白费。",
+      "context": "回望人生时，想肯定曾经经历的意义。",
+      "analysis": "じゃなかった是ではなかった的口语形式。無駄是な形容词，这里是过去否定。",
+      "grammar": [
+        "na-adj"
+      ],
+      "color": "blue",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "rock",
+      "title": "君はロックを聴かない",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/232843/",
+      "excerpt": "聴かない",
+      "kana": "きかない",
+      "focus": "かない",
+      "meaning": "不听。",
+      "context": "明知对方不听这种音乐，仍希望借歌曲拉近距离。",
+      "analysis": "聴く是一类动词。く→か＋ない：聴く→聴かない；不能变成聴くない。",
+      "grammar": [
+        "verb",
+        "classes"
+      ],
+      "color": "rose",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "interview",
+      "title": "インタビュー",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/323222/",
+      "excerpt": "眠る前に",
+      "kana": "ねむるまえに",
+      "focus": "前に",
+      "meaning": "在睡觉之前。",
+      "context": "回忆临睡前会反复默念的话。",
+      "analysis": "前に前面接辞书形。眠る是一类动词；不受后面主句过去时的影响。",
+      "grammar": [
+        "before",
+        "dictionary"
+      ],
+      "color": "sand",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "odoriko",
+      "title": "踊り子",
+      "artist": "Vaundy",
+      "url": "https://www.uta-net.com/song/311553/",
+      "excerpt": "会ったことがない",
+      "kana": "あったことがない",
+      "focus": "ことがない",
+      "meaning": "片段形式：没有见过。",
+      "context": "注意：前文限定“只有一次”。整处表达的意思是“只见过一次”，不是“从未见过”。",
+      "analysis": "会う→会った＋ことがない是经历表达的否定形式。但放回这首歌，前面的次数限定与否定配合，表示“仅一次”；不能脱离上下文翻译。",
+      "grammar": [
+        "experience"
+      ],
+      "color": "violet",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    },
+    {
+      "id": "kaze",
+      "title": "風のささやき",
+      "artist": "あいみょん",
+      "url": "https://www.uta-net.com/song/235596/",
+      "excerpt": "触れる事ができない",
+      "kana": "ふれることができない",
+      "focus": "事ができない",
+      "meaning": "无法触及。",
+      "context": "面对难以改变的现实，叙述者感到无力。",
+      "analysis": "触れる→触れることができない。原文用汉字事，语法说明通常写こと。触れる本身是二类动词。",
+      "grammar": [
+        "ability"
+      ],
+      "color": "teal",
+      "verifiedAt": "2026-11-12",
+      "source": "歌ネット",
+      "type": "歌词短摘录"
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v001",
+      "word": "学生",
+      "kana": "がくせい",
+      "pos": "名词",
+      "meaning": "学生",
+      "grammar": "noun",
+      "example": "私は学生です。",
+      "exampleKana": "わたしはがくせいです。",
+      "exampleMeaning": "我是学生。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "学生",
+        "がくせい"
+      ]
+    },
+    {
+      "id": "v002",
+      "word": "寒い",
+      "kana": "さむい",
+      "pos": "い形容词",
+      "meaning": "冷；寒冷",
+      "grammar": "i-adj",
+      "example": "今日は寒いです。",
+      "exampleKana": "きょうはさむいです。",
+      "exampleMeaning": "今天很冷。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "寒い",
+        "さむい"
+      ]
+    },
+    {
+      "id": "v003",
+      "word": "静か",
+      "kana": "しずか",
+      "pos": "な形容词",
+      "meaning": "安静",
+      "grammar": "na-adj",
+      "example": "ここは静かです。",
+      "exampleKana": "ここはしずかです。",
+      "exampleMeaning": "这里很安静。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "静か",
+        "しずか"
+      ]
+    },
+    {
+      "id": "v004",
+      "word": "食べる",
+      "kana": "たべる",
+      "pos": "动词",
+      "meaning": "吃",
+      "grammar": "verb",
+      "example": "私はご飯を食べます。",
+      "exampleKana": "わたしはごはんをたべます。",
+      "exampleMeaning": "我吃饭。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "二类",
+      "transitivity": "他动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "食べる",
+        "たべる"
+      ]
+    },
+    {
+      "id": "v005",
+      "word": "ご飯",
+      "kana": "ごはん",
+      "pos": "名词",
+      "meaning": "饭；米饭",
+      "grammar": "verb",
+      "example": "私はご飯を食べます。",
+      "exampleKana": "わたしはごはんをたべます。",
+      "exampleMeaning": "我吃饭。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "ご飯",
+        "ごはん"
+      ]
+    },
+    {
+      "id": "v006",
+      "word": "音楽",
+      "kana": "おんがく",
+      "pos": "名词",
+      "meaning": "音乐",
+      "grammar": "nominal",
+      "example": "私の趣味は音楽を聴くことです。",
+      "exampleKana": "わたしのしゅみはおんがくをきくことです。",
+      "exampleMeaning": "我的爱好是听音乐。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "音楽",
+        "おんがく"
+      ]
+    },
+    {
+      "id": "v007",
+      "word": "聴く",
+      "kana": "きく",
+      "pos": "动词",
+      "meaning": "听（音乐等）",
+      "grammar": "verb",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "rock",
+      "verbClass": "一类",
+      "transitivity": "他动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "聴く",
+        "きく"
+      ]
+    },
+    {
+      "id": "v008",
+      "word": "寝る",
+      "kana": "ねる",
+      "pos": "动词",
+      "meaning": "睡觉",
+      "grammar": "before",
+      "example": "寝る前に、音楽を聴きます。",
+      "exampleKana": "ねるまえに、おんがくをききます。",
+      "exampleMeaning": "睡觉前听音乐。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "二类",
+      "transitivity": "自动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "寝る",
+        "ねる"
+      ]
+    },
+    {
+      "id": "v009",
+      "word": "手",
+      "kana": "て",
+      "pos": "名词",
+      "meaning": "手",
+      "grammar": "before",
+      "example": "ご飯を食べる前に、手を洗ってください。",
+      "exampleKana": "ごはんをたべるまえに、てをあらってください。",
+      "exampleMeaning": "吃饭前请洗手。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "手",
+        "て"
+      ]
+    },
+    {
+      "id": "v010",
+      "word": "洗う",
+      "kana": "あらう",
+      "pos": "动词",
+      "meaning": "洗",
+      "grammar": "before",
+      "example": "ご飯を食べる前に、手を洗ってください。",
+      "exampleKana": "ごはんをたべるまえに、てをあらってください。",
+      "exampleMeaning": "吃饭前请洗手。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "一类",
+      "transitivity": "他动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "洗う",
+        "あらう"
+      ]
+    },
+    {
+      "id": "v011",
+      "word": "趣味",
+      "kana": "しゅみ",
+      "pos": "名词",
+      "meaning": "爱好",
+      "grammar": "nominal",
+      "example": "私の趣味は音楽を聴くことです。",
+      "exampleKana": "わたしのしゅみはおんがくをきくことです。",
+      "exampleMeaning": "我的爱好是听音乐。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "趣味",
+        "しゅみ"
+      ]
+    },
+    {
+      "id": "v012",
+      "word": "行く",
+      "kana": "いく",
+      "pos": "动词",
+      "meaning": "去",
+      "grammar": "experience",
+      "example": "日本へ行ったことがある。",
+      "exampleKana": "にほんへいったことがある。",
+      "exampleMeaning": "去过日本。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "一类",
+      "transitivity": "自动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "行く",
+        "いく"
+      ]
+    },
+    {
+      "id": "v013",
+      "word": "日本語",
+      "kana": "にほんご",
+      "pos": "名词",
+      "meaning": "日语",
+      "grammar": "ability",
+      "example": "李さんは日本語を話すことができる。",
+      "exampleKana": "りさんはにほんごをはなすことができる。",
+      "exampleMeaning": "小李会说日语。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "日本語",
+        "にほんご"
+      ]
+    },
+    {
+      "id": "v014",
+      "word": "話す",
+      "kana": "はなす",
+      "pos": "动词",
+      "meaning": "说；讲",
+      "grammar": "ability",
+      "example": "李さんは日本語を話すことができる。",
+      "exampleKana": "りさんはにほんごをはなすことができる。",
+      "exampleMeaning": "小李会说日语。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "一类",
+      "transitivity": "他动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "話す",
+        "はなす"
+      ]
+    },
+    {
+      "id": "v015",
+      "word": "店",
+      "kana": "みせ",
+      "pos": "名词",
+      "meaning": "店；商店",
+      "grammar": "ability",
+      "example": "この店は、カードで払うことができる。",
+      "exampleKana": "このみせは、かーどではらうことができる。",
+      "exampleMeaning": "这家店可以刷卡。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "店",
+        "みせ"
+      ]
+    },
+    {
+      "id": "v016",
+      "word": "カード",
+      "kana": "かーど",
+      "pos": "名词",
+      "meaning": "卡",
+      "grammar": "ability",
+      "example": "この店は、カードで払うことができる。",
+      "exampleKana": "このみせは、かーどではらうことができる。",
+      "exampleMeaning": "这家店可以刷卡。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "カード",
+        "かーど"
+      ]
+    },
+    {
+      "id": "v017",
+      "word": "払う",
+      "kana": "はらう",
+      "pos": "动词",
+      "meaning": "支付",
+      "grammar": "ability",
+      "example": "この店は、カードで払うことができる。",
+      "exampleKana": "このみせは、かーどではらうことができる。",
+      "exampleMeaning": "这家店可以刷卡。",
+      "source": "笔记例句",
+      "songId": null,
+      "verbClass": "一类",
+      "transitivity": "他动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "払う",
+        "はらう"
+      ]
+    },
+    {
+      "id": "v018",
+      "word": "恋しい",
+      "kana": "こいしい",
+      "pos": "い形容词",
+      "meaning": "想念；令人怀念",
+      "grammar": "i-adj",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "marigold",
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "恋しい",
+        "こいしい"
+      ]
+    },
+    {
+      "id": "v019",
+      "word": "君",
+      "kana": "きみ",
+      "pos": "代词",
+      "meaning": "你（注意使用场合）",
+      "grammar": "i-adj",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "marigold",
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "君",
+        "きみ"
+      ]
+    },
+    {
+      "id": "v020",
+      "word": "鮮明",
+      "kana": "せんめい",
+      "pos": "な形容词",
+      "meaning": "鲜明；清晰",
+      "grammar": "na-adj",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "kaiju",
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "鮮明",
+        "せんめい"
+      ]
+    },
+    {
+      "id": "v021",
+      "word": "無駄",
+      "kana": "むだ",
+      "pos": "な形容词",
+      "meaning": "徒劳；白费",
+      "grammar": "na-adj",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "itte",
+      "verbClass": "",
+      "transitivity": "",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "無駄",
+        "むだ"
+      ]
+    },
+    {
+      "id": "v022",
+      "word": "眠る",
+      "kana": "ねむる",
+      "pos": "动词",
+      "meaning": "睡；入睡",
+      "grammar": "before",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "interview",
+      "verbClass": "一类",
+      "transitivity": "自动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "眠る",
+        "ねむる"
+      ]
+    },
+    {
+      "id": "v023",
+      "word": "会う",
+      "kana": "あう",
+      "pos": "动词",
+      "meaning": "见面；遇见",
+      "grammar": "experience",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "odoriko",
+      "verbClass": "一类",
+      "transitivity": "自动词",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "会う",
+        "あう"
+      ]
+    },
+    {
+      "id": "v024",
+      "word": "触れる",
+      "kana": "ふれる",
+      "pos": "动词",
+      "meaning": "触及；接触",
+      "grammar": "ability",
+      "example": "",
+      "exampleKana": "",
+      "exampleMeaning": "",
+      "source": "歌词短摘录",
+      "songId": "kaze",
+      "verbClass": "二类",
+      "transitivity": "自动词（本例）",
+      "addedAt": "2026-11-12",
+      "batch": "第一批 · N5 笔记",
+      "answers": [
+        "触れる",
+        "ふれる"
+      ]
+    }
+  ]
+}

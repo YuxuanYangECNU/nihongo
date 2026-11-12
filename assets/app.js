@@ -1,0 +1,109 @@
+import {escapeHTML as esc, highlight, matchesAnswer, filterVocabulary} from './core.js';
+import {getValue,putValue,status,configured,signIn,signOut,syncNow,startSync} from './sync.js';
+const $=(s,root=document)=>root.querySelector(s);
+const $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const main=$('#main');let data,currentRoute='',currentGrammar=null,scrollTimer,toastTimer,restoring=false;
+const groups=['四大基本句型','动词与变形','动词原形相关句型'];
+const artists=['YOASOBI','あいみょん','Vaundy','ヨルシカ'];
+const safeId=value=>encodeURIComponent(value);
+function toast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),2800);}
+function applyPreferences(){
+ const theme=getValue('theme',window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+ document.documentElement.dataset.theme=theme;
+ $('#theme-toggle').setAttribute('aria-label',theme==='dark'?'切换浅色模式':'切换深色模式');
+ document.body.classList.toggle('hide-kana',!getValue('kana',true));document.body.classList.toggle('hide-meaning',!getValue('meaning',true));
+ $('#show-kana').checked=getValue('kana',true);$('#show-meaning').checked=getValue('meaning',true);
+ $$('[data-pref]').forEach(button=>button.setAttribute('aria-pressed',String(getValue(button.dataset.pref,true))));
+}
+applyPreferences();
+function readControls(){return `<div class="reading-controls"><button class="mini-toggle" data-pref="kana" aria-pressed="${getValue('kana',true)}">假名</button><button class="mini-toggle" data-pref="meaning" aria-pressed="${getValue('meaning',true)}">中文</button></div>`;}
+function attachReadControls(){ $$('[data-pref]').forEach(button=>button.addEventListener('click',()=>{putValue(button.dataset.pref,!getValue(button.dataset.pref,true));applyPreferences();}));}
+function heading(eyebrow,title,subtitle){return `<div class="page-intro"><span class="eyebrow">${eyebrow}</span><h1>${title}</h1><p>${subtitle}</p></div>`;}
+function grammarLink(id){const item=data.grammar.find(g=>g.id===id);return item?`<a class="chip-link" href="#/grammar/${safeId(id)}">${esc(item.title)} ↗</a>`:'';}
+function songExample(song){return `<div class="song-example"><div class="quote-heading"><span class="music-tile ${song.color}" lang="ja">${esc(song.title[0])}</span><div><a class="song-name" lang="ja" href="#/songs/${safeId(song.id)}">${esc(song.title)}</a><span class="song-artist">${esc(song.artist)} · 歌词短摘录</span></div></div><p class="lyric" lang="ja">${highlight(song.excerpt,song.focus)}</p><p class="kana" lang="ja">${esc(song.kana)}</p><p class="meaning">${esc(song.meaning)}</p><p class="context-note"><b>放回歌曲里看</b><br>${esc(song.context)}</p><p class="analysis-note">${esc(song.analysis)}</p><a class="source-link" href="${esc(song.url)}" target="_blank" rel="noopener noreferrer">查看原歌词 · ${esc(song.source)} ↗</a></div>`;}
+function renderHome(){
+ const position=getValue('reading',null);const last=position&&data.grammar.find(g=>g.id===position.id);const featured=data.songs.find(s=>s.id==='marigold');
+ main.innerHTML=`<section class="hero"><div class="hero-copy"><span class="eyebrow">J-POP × JAPANESE NOTES</span><h1 lang="ja">好きな歌から、<br>ことばの世界へ。</h1><p>从熟悉的旋律里，读懂一句日语。<br>把语法、词汇和喜欢的歌，慢慢连在一起。</p><div class="hero-actions"><a class="button primary" href="#/grammar/${last?last.id+'?resume=1':'noun'}">${last?'继续阅读':'开始读笔记'} <span>→</span></a><a class="text-link" href="#/songs">从一首歌开始 ↗</a></div></div><div class="record-art" aria-hidden="true"><div class="record"><div class="record-label"><span>ことば<br><b>33⅓</b><br>SIDE A</span></div></div><span class="record-caption">A LITTLE MUSIC, A LITTLE JAPANESE.</span></div></section>
+ <div class="overview-strip"><span><b>${data.grammar.length}</b>语法主题</span><span><b>${data.vocabulary.length}</b>起始词汇</span><span><b>${data.songs.length}</b>歌曲</span><span class="right">按你的笔记，持续生长</span></div>
+ <section><div class="section-heading"><div><h2>沿着笔记，慢慢学</h2><p>${last?'上次读到：'+esc(last.title):'从四大基本句型出发，再理解动词与句子的变化。'}</p></div><a class="text-link" href="#/grammar">全部笔记 →</a></div><div class="path-grid">${groups.map((group,i)=>{const items=data.grammar.filter(g=>g.group===group);return `<a class="path-card" href="#/grammar/${items[0].id}"><span class="path-number">0${i+1}</span><h3>${group}</h3><p>${['名词、い形容词、な形容词、动词','认识类别，再找到正确的辞书形','前に、後で，以及こと的几种用法'][i]}</p><div class="card-bottom"><span>${items.length} 个主题</span><span>打开笔记 ↗</span></div></a>`;}).join('')}</div></section>
+ <div class="home-bottom"><section class="feature-quote"><div class="quote-heading"><span class="music-tile amber" lang="ja">花</span><div><span class="eyebrow">A LINE TO REMEMBER</span><br><span>${esc(featured.artist)} · ${esc(featured.title)}</span></div></div><p class="lyric" lang="ja">${highlight(featured.excerpt,featured.focus)}</p><p class="kana" lang="ja">${featured.kana}</p><p class="meaning">${featured.meaning}</p><div class="quote-bottom"><span class="muted">い形容词 · 非过去肯定</span><a href="#/grammar/i-adj">看看这里的语法 →</a></div></section><section class="recent-panel"><h3>刚放进笔记里的</h3><a class="recent-row" href="#/grammar/noun"><span>四大基本句型 · 敬体与简体</span><span>11.12</span></a><a class="recent-row" href="#/vocabulary"><span>第一批词汇 · 从 N5 笔记出发</span><span>${data.vocabulary.length} 词</span></a><a class="recent-row" href="#/songs/odoriko"><span lang="ja">踊り子 · 次数与经历表达</span><span>读语境 ↗</span></a></section></div>
+ <p class="content-note">歌词采用已核对的短摘录，并附上下文说明和原文链接。笔记例句、原创拓展分别标明；不把改写当成歌词。</p>`;
+}
+function renderGrammar(id,params){
+ const item=data.grammar.find(g=>g.id===id)||data.grammar[0];currentGrammar=item.id;
+ const index=data.grammar.indexOf(item);const previous=data.grammar[index-1],next=data.grammar[index+1];
+ const saved=getValue('reading',null);const resume=params.get('resume')==='1'&&saved?.id===item.id;
+ if(!resume)putValue('reading',{id:item.id,ratio:0});
+ main.innerHTML=`${heading('GRAMMAR NOTES','语法笔记','按学习顺序整理。先理解变化，再去歌里听见它。')}<div class="grammar-layout"><aside class="grammar-nav" aria-label="语法目录">${groups.map(group=>`<div class="nav-group">${group}</div>${data.grammar.filter(g=>g.group===group).map(g=>`<a href="#/grammar/${g.id}" class="${g.id===item.id?'active':''}" ${g.id===item.id?'aria-current="page"':''}><span>${String(data.grammar.indexOf(g)+1).padStart(2,'0')}</span>${g.title}</a>`).join('')}`).join('')}</aside><div><article class="article-card"><div class="article-top"><span class="pill">基础 · ${item.group}</span>${readControls()}</div><h1>${item.title}</h1><p class="article-sub">${item.subtitle}</p><div class="formula" lang="ja">${esc(item.formula)}</div><p class="description">${item.description}</p><ul class="key-points">${item.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ul>
+ ${item.forms.length?`<h2>八种形式，一起对照</h2><table class="form-table"><thead><tr><th scope="col">形式</th><th scope="col">表达</th></tr></thead><tbody>${item.forms.map(f=>`<tr><td>${f.label}</td><td lang="ja">${f.text}</td></tr>`).join('')}</tbody></table>`:''}
+ <h2 class="section-label">从例句理解 <small>完整句子 · 对照阅读</small></h2>${item.examples.map(e=>`<div class="example"><span class="source-tag">${e.source}</span><p class="jp" lang="ja">${highlight(e.text,e.focus)}</p><p class="kana" lang="ja">${e.kana}</p><p class="meaning">${e.meaning}</p></div>`).join('')}
+ <h2 class="section-label">在喜欢的歌里 <small>歌词短摘录 · 附语境</small></h2>${data.songs.filter(s=>s.grammar.includes(item.id)).map(songExample).join('')||'<p class="empty-note">目前还没有收录直接对应这个用法的合适歌词。先用上面的完整例句理解，不把相似表达硬套进来。</p>'}
+ <h2>顺便认识几个词</h2><div class="article-links">${data.vocabulary.filter(w=>w.grammar===item.id).map(w=>`<a class="chip-link" lang="ja" href="#/vocabulary?word=${safeId(w.word)}">${w.word} ↗</a>`).join('')||'<a class="chip-link" href="#/vocabulary">打开词汇本 →</a>'}</div><p class="content-note">整理自学习笔记 · ${item.addedAt} 更新</p></article><div class="article-pager"><span>${previous?`<a href="#/grammar/${previous.id}">← ${previous.title}</a>`:'从这里开始'}</span><span>${next?`<a href="#/grammar/${next.id}">${next.title} →</a>`:'<a href="#/songs">到歌曲里看看 →</a>'}</span></div></div></div>`;
+ attachReadControls();
+ if(resume){restoring=true;requestAnimationFrame(()=>{window.scrollTo(0,(document.documentElement.scrollHeight-window.innerHeight)*(saved.ratio||0));setTimeout(()=>restoring=false,200);});}
+}
+function vocabExample(word){const song=data.songs.find(s=>s.id===word.songId);return song?`<p class="vocab-example" lang="ja">${highlight(song.excerpt,song.focus)}</p><p class="kana" lang="ja">${song.kana}</p><p class="meaning">${song.meaning}</p><p class="context-note">${song.context}</p><a class="source-link" href="#/songs/${song.id}">${song.artist} · ${song.title} ↗</a>`:`<p class="vocab-example" lang="ja">${highlight(word.example,word.word)}</p><p class="kana" lang="ja">${word.exampleKana}</p><p class="meaning">${word.exampleMeaning}</p><span class="source-tag">${word.source}</span>`;}
+function renderVocabulary(params){
+ let mode='browse';let filters={search:params.get('word')||'',pos:'',verbClass:'',artist:'',from:'',to:''};
+ main.innerHTML=`${heading('VOCABULARY','词汇本','从笔记和歌词里积累。读一读，也可以动手打出来。')}<div class="filter-panel"><div class="search-field"><input type="search" id="vocab-search" aria-label="搜索词汇、假名、中文或歌曲" placeholder="搜索词汇、假名、中文或歌曲…" value="${esc(filters.search)}"></div><div class="filter-row"><div class="filter-field"><label for="pos">词性</label><select id="pos"><option value="">全部词性</option>${[...new Set(data.vocabulary.map(v=>v.pos))].map(p=>`<option>${p}</option>`).join('')}</select></div><div class="filter-field"><label for="verb-class">动词类别</label><select id="verb-class"><option value="">全部类别</option><option>一类</option><option>二类</option><option>三类</option></select></div><div class="filter-field"><label for="artist">歌曲来源</label><select id="artist"><option value="">全部来源</option>${artists.map(a=>`<option>${a}</option>`).join('')}</select></div><div class="filter-field"><label for="date-from">加入日期 · 从</label><input type="date" id="date-from"></div><div class="filter-field"><label for="date-to">至</label><input type="date" id="date-to"></div><button class="reset-filter" id="reset-filters">重置</button></div></div><div class="practice-bar"><div class="segmented" role="group" aria-label="词汇模式"><button data-mode="browse" class="active" aria-pressed="true">浏览词汇</button><button data-mode="meaning" aria-pressed="false">看中文写日语</button><button data-mode="reading" aria-pressed="false">看日语写假名</button></div><span class="results-count" id="result-count" aria-live="polite"></span>${readControls()}</div><p class="practice-help" id="practice-help">点击「展开例句」，看看这个词怎样出现在句子里。</p><div class="vocab-grid" id="vocab-results"></div>`;
+ attachReadControls();
+ function update(){
+ const words=filterVocabulary(data.vocabulary,data.songs,filters);
+ $('#result-count').textContent=`${words.length} / ${data.vocabulary.length} 个词`;
+ $('#practice-help').textContent=mode==='browse'?'点击「展开例句」，看看这个词怎样出现在句子里。':mode==='reading'?'输入假名，按回车核对。选词时的回车不会提交；不计分，不保存作答记录。':'输入日语汉字词或假名，按回车核对。不计分，不保存作答记录。';
+ $('#vocab-results').innerHTML=words.map(w=>`<article class="vocab-card" data-id="${w.id}">${mode==='browse'?`<div class="vocab-top"><div><h2 class="word" lang="ja">${esc(w.word)}</h2><p class="kana" lang="ja">${esc(w.kana)}</p><p class="word-meaning">${esc(w.meaning)}</p></div><span class="pill">${w.pos}</span></div>`:`<div class="vocab-top"><div><span class="practice-label">${mode==='reading'?'这个词怎么读？':'用日语怎么说？'}</span><h2 class="practice-prompt ${mode==='reading'?'jp':'meaning'}" ${mode==='reading'?'lang="ja"':''}>${esc(mode==='reading'?w.word:w.meaning)}</h2></div><span class="pill">${w.pos}</span></div><div class="practice-entry"><input class="practice-input" lang="ja" aria-label="${mode==='reading'?esc(w.word)+'的假名':esc(w.meaning)+'的日语'}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${mode==='reading'?'输入平假名…':'输入日语或假名…'}"><p class="practice-feedback" role="status"></p><button class="answer-button">查看答案与例句</button><div class="revealed-answer" hidden></div></div>`}<p class="word-meta">${[w.verbClass,w.transitivity].filter(Boolean).join(' · ')}${w.verbClass?' · ':''}加入于 ${w.addedAt}</p>${mode==='browse'?`<details><summary>展开例句与关联语法</summary>${vocabExample(w)}<div class="article-links">${grammarLink(w.grammar)}</div></details>`:''}</article>`).join('')||'<div class="empty-results"><h3>这组条件下还没有词汇</h3><p>换个关键词，或点击上方「重置」。</p></div>';
+ if(mode!=='browse')attachPractice(words);
+ }
+ function attachPractice(words){
+ $$('.vocab-card').forEach(card=>{
+ const word=words.find(w=>w.id===card.dataset.id),input=$('input',card),feedback=$('.practice-feedback',card);let composing=false,compositionEndedAt=0,revealed=false;
+ input.addEventListener('compositionstart',()=>{composing=true;});input.addEventListener('compositionend',()=>{composing=false;compositionEndedAt=performance.now();});
+ input.addEventListener('input',()=>{input.classList.remove('correct','wrong');feedback.className='practice-feedback';feedback.textContent='';});
+ input.addEventListener('keydown',event=>{
+ if(event.key!=='Enter'||event.isComposing||composing||event.keyCode===229||performance.now()-compositionEndedAt<80)return;
+ event.preventDefault();if(!input.value.trim()){feedback.textContent='先输入一个答案。';return;}
+ const correct=matchesAnswer(input.value,word,mode);input.classList.toggle('correct',correct);input.classList.toggle('wrong',!correct);feedback.className='practice-feedback '+(correct?'correct':'wrong');feedback.textContent=correct?(revealed?'写对了，可以再读一遍例句。':'✓ 写对了。'):'再看看长音、促音、小假名或词的写法。';
+ });
+ $('.answer-button',card).addEventListener('click',event=>{revealed=true;event.currentTarget.hidden=true;const answer=$('.revealed-answer',card);answer.hidden=false;answer.innerHTML=`<p class="word" lang="ja">${word.word}</p><p class="kana" lang="ja">${word.kana}</p>${vocabExample(word)}<div class="article-links">${grammarLink(word.grammar)}</div>`;});
+ });
+ }
+ const mapping={'vocab-search':'search',pos:'pos','verb-class':'verbClass',artist:'artist','date-from':'from','date-to':'to'};
+ Object.entries(mapping).forEach(([id,key])=>$('#'+id).addEventListener('input',event=>{filters[key]=event.target.value;update();}));
+ $('#reset-filters').addEventListener('click',()=>{Object.entries(mapping).forEach(([id,key])=>{$('#'+id).value='';filters[key]='';});update();});
+ $$('[data-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.mode;$$('[data-mode]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});update();}));update();
+}
+function renderSongs(id){
+ const song=data.songs.find(s=>s.id===id);
+ if(id&&!song){renderNotFound();return;}
+ if(song){main.innerHTML=`<div class="song-detail"><a class="back-link" href="#/songs">← 所有歌曲</a><div class="article-card"><span class="eyebrow">LISTEN & NOTICE</span><h1 lang="ja">${song.title}</h1><p class="article-sub">${song.artist}</p><h2>这次留意的表达</h2>${songExample(song)}<h2>回到语法笔记</h2><div class="article-links">${song.grammar.map(grammarLink).join('')}</div><h2>这首歌里的词</h2><div class="article-links">${data.vocabulary.filter(w=>w.songId===song.id).map(w=>`<a class="chip-link" lang="ja" href="#/vocabulary?word=${safeId(w.word)}">${w.word} →</a>`).join('')||'<span class="muted">这次主要学习句型变化。</span>'}</div><p class="content-note">歌词短摘录已核对 · ${song.verifiedAt}<br>歌曲索引中的卡面为排版图案，不是官方唱片封面。歌词完整上下文请查看来源页面。</p></div></div>`;return;}
+ main.innerHTML=`${heading('SONG INDEX','歌曲索引','从一首喜欢的歌，找到学过的语法和词汇。')}<div class="artists" role="group" aria-label="按歌手筛选"><button class="artist-button active" data-artist="" aria-pressed="true">全部歌曲</button>${artists.map(a=>`<button class="artist-button" data-artist="${a}" aria-pressed="false">${a}</button>`).join('')}</div><p class="results-count" id="song-count"></p><div class="song-grid" id="song-grid" style="margin-top:17px"></div><p class="content-note">卡面为原创排版图案，并非官方封面。歌曲例句采用短摘录，附上下文与出处。</p>`;
+ function show(artist){const songs=data.songs.filter(s=>!artist||s.artist===artist);$('#song-count').textContent=`${songs.length} 首歌曲`;$('#song-grid').innerHTML=songs.map((s,i)=>`<article class="song-card"><a href="#/songs/${s.id}" aria-label="查看 ${s.title}"><div class="song-art ${s.color}"><small>ことば / SONG NOTES</small><span lang="ja">${esc(s.title.slice(0,4))}</span></div></a><div class="song-card-body"><h3 lang="ja">${esc(s.title)}</h3><p>${s.artist}</p><div class="article-links">${s.grammar.map(grammarLink).join('')}</div><a class="source-link" href="#/songs/${s.id}">读这首歌的笔记 →</a></div></article>`).join('');}
+ $$('[data-artist]').forEach(button=>button.addEventListener('click',()=>{$$('[data-artist]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});show(button.dataset.artist);}));show('');
+}
+function renderNotFound(){main.innerHTML=`<div class="empty-results"><h1>这一页还没有写进笔记</h1><p>可以从语法目录重新开始。</p><a class="button primary" href="#/grammar">打开语法笔记 →</a></div>`;}
+function savePosition(){if(!currentGrammar||restoring)return;const length=document.documentElement.scrollHeight-innerHeight;putValue('reading',{id:currentGrammar,ratio:length>0?Math.max(0,Math.min(1,scrollY/length)):0});}
+function route(){
+ clearTimeout(scrollTimer);currentGrammar=null;const [path,search='']=location.hash.slice(1).split('?');const parts=(path||'/home').split('/').filter(Boolean);const [page='home',id]=parts;const params=new URLSearchParams(search);currentRoute=page;
+ $$('nav a').forEach(a=>{if(a.dataset.page===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ if(page==='home')renderHome();else if(page==='grammar'){if(id&&!data.grammar.some(g=>g.id===id))renderNotFound();else renderGrammar(id,params);}else if(page==='vocabulary')renderVocabulary(params);else if(page==='songs')renderSongs(id);else renderNotFound();
+ document.title=({home:'首页',grammar:'语法笔记',vocabulary:'词汇本',songs:'歌曲索引'}[page]||'未找到页面')+' · ことば';
+ if(params.get('resume')!=='1')window.scrollTo({top:0,behavior:'instant'});applyPreferences();
+}
+window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);if(currentGrammar&&!restoring)scrollTimer=setTimeout(savePosition,350);},{passive:true});
+window.addEventListener('pagehide',savePosition);
+function authPanel(){const s=status();const area=$('#auth-area');
+ if(!configured){area.innerHTML='<div class="sync-info"><strong>当前保存到这台设备</strong>阅读位置和显示偏好会保留。跨设备同步尚未连接，连接后可在手机和电脑间接着读。</div>';return;}
+ if(s.signedIn){area.innerHTML=`<div class="sync-info"><strong>已登录</strong>${esc(s.email)}</div><div class="hero-actions"><button id="sync-now">立即同步</button><button id="sign-out">退出登录</button></div>`;$('#sync-now').addEventListener('click',async()=>{await syncNow();});$('#sign-out').addEventListener('click',async()=>{await signOut();authPanel();});return;}
+ area.innerHTML='<form class="auth-form" id="sign-in"><label for="email">邮箱</label><input id="email" name="email" type="email" autocomplete="username" required><label for="password">密码</label><input id="password" name="password" type="password" autocomplete="current-password" required><button type="submit">登录并同步</button></form><p class="auth-note">仅同步阅读位置和显示偏好，不记录打字内容。使用已配置的个人账号登录。</p>';
+ $('#sign-in').addEventListener('submit',async event=>{event.preventDefault();const button=$('button',event.target);button.disabled=true;$('#auth-feedback').textContent='正在登录…';try{await signIn($('#email').value,$('#password').value);authPanel();}catch(error){$('#auth-feedback').textContent=error.message;}finally{button.disabled=false;}});
+}
+$('#theme-toggle').addEventListener('click',()=>{putValue('theme',document.documentElement.dataset.theme==='dark'?'light':'dark');applyPreferences();});
+$('#sync-open').addEventListener('click',()=>{authPanel();$('#settings').showModal();});
+$('#settings').addEventListener('click',event=>{if(event.target===$('#settings')){const r=event.target.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.target.close();}});
+$('#show-kana').addEventListener('change',event=>{putValue('kana',event.target.checked);applyPreferences();});
+$('#show-meaning').addEventListener('change',event=>{putValue('meaning',event.target.checked);applyPreferences();});
+window.addEventListener('preferences-updated',()=>{applyPreferences();if(currentRoute==='home'&&data)renderHome();});
+window.addEventListener('sync-status',event=>{const labels={local:'本机保存',memory:'临时保存',pending:'同步中',synced:'已同步',error:'待同步'};$('#sync-label').textContent=labels[event.detail]||'本机保存';$('#sync-open').className='sync-button '+event.detail;if(event.detail==='synced')$('#auth-feedback').textContent='阅读位置和显示偏好已同步。';});
+window.addEventListener('sync-error',event=>{$('#auth-feedback').textContent=event.detail;});
+async function load(){try{const result=await fetch(new URL('../data/content.json',import.meta.url));if(!result.ok)throw new Error('内容加载失败');data=await result.json();route();window.addEventListener('hashchange',route);startSync();}catch(error){main.innerHTML='<div class="empty-results"><h2>暂时没有读到笔记</h2><p>请检查网络，再刷新一次。</p><button id="retry">重新加载</button></div>';$('#retry').addEventListener('click',()=>location.reload());}}
+load();

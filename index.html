@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7"><meta name="description" content="从熟悉的旋律里，读懂一句日语。按语法笔记学习 J-POP，积累词汇，练习假名。">
+<title>ことば · Nihongo Atlas</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/config.js"></script>
+<script type="module" src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="#/home" aria-label="ことば 首页"><span class="brand-mark" lang="ja">こ</span><span><b lang="ja">ことば</b><small>NIHONGO ATLAS</small></span></a>
+<nav aria-label="主导航"><a href="#/home" data-page="home">首页</a><a href="#/grammar" data-page="grammar">语法笔记</a><a href="#/vocabulary" data-page="vocabulary">词汇本</a><a href="#/songs" data-page="songs">歌曲索引</a></nav>
+<div class="header-actions"><button class="icon-button" id="theme-toggle" aria-label="切换深色模式" title="切换深色模式">◐</button><button class="sync-button" id="sync-open" aria-label="同步与显示设置"><span class="status-dot"></span><span id="sync-label">本机保存</span></button></div>
+</div></header>
+<main id="main" tabindex="-1"><div class="loading">正在打开你的日语笔记…</div></main>
+<footer class="site-footer"><span><b lang="ja">ことば</b> · 从喜欢的歌，学会自己的表达。</span><a href="https://github.com/YuxuanYangECNU/nihongo" target="_blank" rel="noopener noreferrer">内容与更新 ↗</a></footer>
+<dialog id="settings"><form method="dialog"><button class="dialog-close icon-button" aria-label="关闭设置">×</button></form><span class="eyebrow">YOUR SPACE</span><h2>阅读与同步</h2><div class="setting-row"><label for="show-kana">显示平假名辅助</label><input id="show-kana" type="checkbox"></div><div class="setting-row"><label for="show-meaning">显示中文释义</label><input id="show-meaning" type="checkbox"></div><div id="auth-area"></div><p id="auth-feedback" role="status"></p></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>
